@@ -1,6 +1,8 @@
 package com.example.authentication_jetpackcompose.composeable
 
+import android.util.Log
 import android.util.Size
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -41,22 +43,24 @@ fun LoginUi() {
 
         OutlinedTextField(
             label = { Text(text = "Email") },
-            value = "",
-            onValueChange = {},
+            value = email.value,
+            onValueChange = {email.value=it},
             modifier = Modifier
                 .fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             label = { Text(text = "Password") },
-            value = "",
-            onValueChange = {},
+            value = password.value,
+            onValueChange = {password.value=it},
             modifier = Modifier
                 .fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(20.dp))
         Button(
-            onClick = { /*TODO*/ }, modifier = Modifier
+            onClick = {
+                      Log.d("Login","Value \nEmail = ${email.value}\nPassword=${password.value}")
+            }, modifier = Modifier
                 .fillMaxWidth()
                 .height(52.dp)
         ) {
@@ -64,4 +68,7 @@ fun LoginUi() {
         }
     }
 
+    fun showToast(){
+
+    }
 }
