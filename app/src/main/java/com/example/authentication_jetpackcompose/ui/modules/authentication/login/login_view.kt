@@ -1,21 +1,18 @@
-package com.example.authentication_jetpackcompose.composeable
-
+import android.content.Context
 import android.util.Log
-import android.util.Size
 import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
-import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalConsumer
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,8 +20,9 @@ import androidx.compose.ui.unit.sp
 
 @Preview
 @Composable
-fun LoginUi() {
-
+fun LoginView() {
+    val TAG = "LOGIN_UI"
+    val context = LocalContext.current
     val email = remember {
         mutableStateOf("")
     }
@@ -41,34 +39,32 @@ fun LoginUi() {
         Text(text = "Login Page", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(20.dp))
 
-        OutlinedTextField(
-            label = { Text(text = "Email") },
+        AuthTextField(
+            label = "Email",
             value = email.value,
-            onValueChange = {email.value=it},
-            modifier = Modifier
-                .fillMaxWidth()
+            onValueChange = { email.value = it },
         )
         Spacer(modifier = Modifier.height(10.dp))
-        OutlinedTextField(
-            label = { Text(text = "Password") },
+        AuthTextField(
+            label = "Password",
             value = password.value,
-            onValueChange = {password.value=it},
-            modifier = Modifier
-                .fillMaxWidth()
+            onValueChange = { password.value = it }
         )
         Spacer(modifier = Modifier.height(20.dp))
         Button(
             onClick = {
-                      Log.d("Login","Value \nEmail = ${email.value}\nPassword=${password.value}")
+                // showToast(context, "Value \nEmail = ${email.value}\nPassword=${password.value}")
+                Log.d(TAG, "Value \nEmail = ${email.value}\nPassword=${password.value}")
             }, modifier = Modifier
                 .fillMaxWidth()
                 .height(52.dp)
+
         ) {
             Text(text = "LOGIN")
         }
     }
+}
 
-    fun showToast(){
-
-    }
+fun showToast(context: Context, text: String) {
+    Toast.makeText(context, text, Toast.LENGTH_LONG).show()
 }
