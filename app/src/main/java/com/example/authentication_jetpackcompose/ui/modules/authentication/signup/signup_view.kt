@@ -16,9 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+@Preview
 @Composable
 fun SignupView(){
     val TAG = "LOGIN_UI"
@@ -36,7 +38,7 @@ fun SignupView(){
             .padding(20.dp), verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Login Page", fontSize = 32.sp, fontWeight = FontWeight.Bold)
+        Text(text = "SignUp Page", fontSize = 32.sp, fontWeight = FontWeight.Bold)
         Spacer(modifier = Modifier.height(20.dp))
 
         AuthTextField(
@@ -60,7 +62,7 @@ fun SignupView(){
                 .height(52.dp)
 
         ) {
-            Text(text = "LOGIN")
+            Text(text = "SIGNUP")
         }
     }
 }

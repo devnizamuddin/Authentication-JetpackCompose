@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.authentication_jetpackcompose.ui.modules.authentication.signup.SignupView
 import com.example.authentication_jetpackcompose.ui.theme.AuthenticationJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
