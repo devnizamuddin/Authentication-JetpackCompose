@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.example.authentication_jetpackcompose.ui.components.PrimaryButton
 import com.example.authentication_jetpackcompose.ui.components.SecondaryButton
 import com.example.authentication_jetpackcompose.ui.theme.Purple500
+import com.example.authentication_jetpackcompose.ui.theme.TextShadowColor
 
 @Preview
 @Composable
@@ -47,8 +48,16 @@ fun LoginView() {
             Spacer(modifier = Modifier.height(128.dp))
             Text(
                 text = "Login Page",
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold,
+                style = TextStyle(
+                    color = Color.Black,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 32.sp,
+                    shadow = Shadow(
+                        color = TextShadowColor,
+                        offset = Offset(x = 11f, y = 16f),
+                        blurRadius = 12f
+                    ),
+                )
             )
         }
 
@@ -71,14 +80,14 @@ fun LoginView() {
                 onValueChange = { password.value = it }
             )
             Spacer(modifier = Modifier.height(20.dp))
-            PrimaryButton(text="LOGIN", onClick = {
-                 showToast(context, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
-                 Log.d(TAG, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
+            PrimaryButton(text = "LOGIN", onClick = {
+                showToast(context, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
+                Log.d(TAG, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
             })
             Spacer(modifier = Modifier.height(10.dp))
-            SecondaryButton(text="SIGNUP", onClick = {
-                 showToast(context, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
-                 Log.d(TAG, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
+            SecondaryButton(text = "SIGNUP", onClick = {
+                showToast(context, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
+                Log.d(TAG, "Value \nEmail = ${email.value}\nPassword = ${password.value}")
             })
         }
         Column(modifier = Modifier.align(Alignment.BottomCenter)) {
@@ -87,7 +96,7 @@ fun LoginView() {
 
                 style = TextStyle(
                     shadow = Shadow(
-                        color = Color.Black,
+                        color = TextShadowColor,
                         offset = Offset(8f, 8f),
                         //blurRadius = 4f
                     ),
