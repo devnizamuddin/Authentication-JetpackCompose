@@ -1,13 +1,11 @@
+package com.example.authentication_jetpackcompose.ui.modules.authentication.login
+
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -19,16 +17,13 @@ import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.authentication_jetpackcompose.ui.components.AuthTextField
 import com.example.authentication_jetpackcompose.ui.components.PrimaryButton
 import com.example.authentication_jetpackcompose.ui.components.SecondaryButton
-import com.example.authentication_jetpackcompose.ui.theme.Purple500
 import com.example.authentication_jetpackcompose.ui.theme.TextShadowColor
 
-@Preview
 @Composable
 fun LoginView() {
     val TAG = "LOGIN_UI"
